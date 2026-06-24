@@ -35,9 +35,40 @@ import logo8 from "../assets/logoipsum-331.svg";
   <WhyChoseUs
     title="Why Choose Podderro?"
     text="We're more than a service provider we're your podcast growth partner."
-    
+    points={[
+      {
+        icon: "shield",
+        title: "Consistent Quality",
+        description: "Every episode is professionally refined to ensure clear audio, polished delivery, and a premium listener experience.",
+      },
+      {
+        icon: "check-circle",
+        title: "Time-Saving Workflow",
+        description: "We handle editing, publishing, and distribution so you can focus on creating great content.",
+      },
+      {
+        icon: "zap",
+        title: "Fast Turnaround",
+        description: "Episodes delivered within 24-48 hours without compromising on quality or attention to detail.",
+      },
+      {
+        icon: "users",
+        title: "Dedicated Support",
+        description: "Your personal podcast manager ensures smooth communication and quick revisions whenever needed.",
+      },
+      {
+        icon: "award",
+        title: "Growth-Focused Strategy",
+        description: "SEO-optimized show notes, episode titles, and distribution to maximize your audience reach.",
+      },
+      {
+        icon: "star",
+        title: "Transparent Pricing",
+        description: "Simple, flat-rate pricing with no hidden fees. Know exactly what you're paying for every month.",
+      },
+    ]}
     cta={{
-      title: "Get Started",
+      title: "Book a Call",
       url: "#",
     }}
   />
@@ -46,16 +77,20 @@ import logo8 from "../assets/logoipsum-331.svg";
     title="How it works"
     items={[
       {
-        title: "Set up in minutes",
-        text: "Create your workspace, invite your team, and configure projects effortlessly—no complex onboarding or technical setup required.",
+        title: "Share Your Episode",
+        text: "Send us your raw recordings, notes, and requirements through our simple submission process.",
       },
       {
-        title: "Collaborate without friction",
-        text: "Centralize communication, assets, and tasks in one place so everyone stays aligned and productive.",
+        title: "We Produce & Optimize",
+        text: "Our team edits, enhances audio, prepares content assets, and gets everything ready for publishing.",
       },
       {
-        title: "Deliver measurable results",
-        text: "Track progress in real time, optimize workflows, and ship projects faster with complete visibility.",
+        title: "Publish & Distribute",
+        text: "Your episode is published and distributed across major podcast platforms for maximum reach.",
+      },
+      {
+        title: "Promote & Grow",
+        text: "We repurpose content, support marketing efforts, and help your podcast attract more listeners over time.",
       },
     ]}
   />

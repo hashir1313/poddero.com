@@ -1,15 +1,31 @@
 ---
 import Button from "../components/Button.astro";
 import type { Link } from "../types";
-import { Shield } from "@lucide/astro"
+import { Shield, CheckCircle, Zap, Users, Award, Star } from "@lucide/astro";
+
+interface Point {
+  icon: "shield" | "check-circle" | "zap" | "users" | "award" | "star";
+  title: string;
+  description: string;
+}
 
 interface Props {
   title: string;
   text: string;
+  points: Point[];
   cta?: Link;
 }
 
-const { title, text, cta } = Astro.props;
+const { title, text, points, cta } = Astro.props;
+
+const icons = {
+  shield: Shield,
+  "check-circle": CheckCircle,
+  zap: Zap,
+  users: Users,
+  award: Award,
+  star: Star,
+};
 ---
 
 <div class="sy-introducing">
@@ -20,60 +36,20 @@ const { title, text, cta } = Astro.props;
         {text}
       </p>
       <div class="points">
-        <div class="point">
-          <div class="point-inner">
-            <Shield stroke-width={3} size={30}/>
-            <div class="content">
-              <h3>Consistent Quality</h3>
-              <p>Every episode is professionally refined to ensure clear audio, polished delivery, and a premium listener experience.</p>
+        {points.map((point) => {
+          const Icon = icons[point.icon];
+          return (
+            <div class="point">
+              <div class="point-inner">
+                <Icon stroke-width={2} size={30} />
+                <div class="content">
+                  <h3>{point.title}</h3>
+                  <p>{point.description}</p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="point">
-          <div class="point-inner">
-            <Shield stroke-width={3} size={30}/>
-            <div class="content">
-              <h3>Consistent Quality</h3>
-              <p>Every episode is professionally refined to ensure clear audio, polished delivery, and a premium listener experience.</p>
-            </div>
-          </div>
-        </div>
-        <div class="point">
-          <div class="point-inner">
-            <Shield stroke-width={3} size={30}/>
-            <div class="content">
-              <h3>Consistent Quality</h3>
-              <p>Every episode is professionally refined to ensure clear audio, polished delivery, and a premium listener experience.</p>
-            </div>
-          </div>
-        </div>
-        <div class="point">
-          <div class="point-inner">
-            <Shield stroke-width={3} size={30}/>
-            <div class="content">
-              <h3>Consistent Quality</h3>
-              <p>Every episode is professionally refined to ensure clear audio, polished delivery, and a premium listener experience.</p>
-            </div>
-          </div>
-        </div>
-        <div class="point">
-          <div class="point-inner">
-            <Shield stroke-width={3} size={30}/>
-            <div class="content">
-              <h3>Consistent Quality</h3>
-              <p>Every episode is professionally refined to ensure clear audio, polished delivery, and a premium listener experience.</p>
-            </div>
-          </div>
-        </div>
-        <div class="point">
-          <div class="point-inner">
-            <Shield stroke-width={3} size={30}/>
-            <div class="content">
-              <h3>Consistent Quality</h3>
-              <p>Every episode is professionally refined to ensure clear audio, polished delivery, and a premium listener experience.</p>
-            </div>
-          </div>
-        </div>
+          );
+        })}
       </div>
       {cta ? <Button {...cta} arrow class="cta" /> : null}
       <div data-gl-place></div>
@@ -128,29 +104,80 @@ const { title, text, cta } = Astro.props;
   }
 
 
-  .points{
+  .points {
     width: 100%;
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
-    justify-content: end;
+    justify-content: center;
     margin: 2rem 0;
   }
+
   .point {
     width: 45%;
+    min-width: 280px;
   }
-  .point-inner{
+
+  .point-inner {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 1rem
-  }
-  .content{
-    width: 80%;
-    text-align: start;
+    align-items: flex-start;
     gap: 1rem;
   }
-  .content p, h3 {
-    width: fit-content;
+
+  .content {
+    width: 100%;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .content h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .content p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+  }
+
+  @media (--mq-tablet) {
+    .points {
+      gap: 1.5rem;
+    }
+
+    .point {
+      width: 100%;
+      min-width: 0;
+    }
+
+    .point-inner {
+      gap: 1rem;
+    }
+  }
+
+  @media (--mq-phone) {
+    .points {
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .point-inner {
+      gap: 0.75rem;
+    }
+
+    .content h3 {
+      font-size: 1.1rem;
+    }
+
+    .content p {
+      font-size: 0.9rem;
+    }
   }
 </style>
