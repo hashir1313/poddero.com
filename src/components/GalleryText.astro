@@ -39,10 +39,6 @@ const { title, text, cta, images, imagesAlignment } = Astro.props;
       gap: 2rem;
     }
 
-    @media (--mq-tablet-sm) {
-      flex-direction: column-reverse;
-    }
-
     @media (--mq-phone) {
       padding: 1rem 0;
     }
@@ -50,10 +46,18 @@ const { title, text, cta, images, imagesAlignment } = Astro.props;
 
   .left {
     flex-direction: row-reverse;
+
+    @media (--mq-tablet-sm) {
+      flex-direction: column-reverse;
+    }
   }
 
   .right {
     flex-direction: row;
+
+    @media (--mq-tablet-sm) {
+      flex-direction: column-reverse;
+    }
   }
 
   .content {
