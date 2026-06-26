@@ -1,6 +1,7 @@
 ---
 import Button from "./Button.astro";
 import Logo from "../assets/logo.svg";
+import {Podcast}  from "@lucide/astro"
 import type { Link } from "../types";
 
 interface Props {
@@ -19,7 +20,7 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
     <div class="inner u-container">
       <div class="wrapper">
         <a class="logo" href={logoUrl}>
-          <Logo />
+          <Podcast  class="logo"/>
           <span class="u-sr-only">{logoAlt}</span>
         </a>
 
@@ -129,14 +130,10 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
   .logo {
     position: relative;
     z-index: 3;
-
-    svg {
-      width: 2.4rem;
-
-      :global(path) {
-        fill: currentcolor;
-      }
-    }
+    color: currentColor;
+    width: 32px;
+    height: 32px;
+    stroke-width: 1.5px;
   }
 
   .menu {
