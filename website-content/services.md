@@ -4,13 +4,13 @@
 **Launch, Grow, and Scale Your Podcast With Confidence**
 
 ## Subheadline / Text 
-Launch, Grow, and Scale Your Podcast With Confidence
+From production and distribution to audience growth, Podderro provides end-to-end podcast services that help creators save time, maintain quality, and reach more listeners consistently.
 
 ## Services
 
 ### Audio enhancing 
 
-**Headline** : Auydio Enhancing - Crystal-Clear Audio 
+**Headline** : Audio Enhancing - Crystal-Clear Audio 
 **Supporting text** : Remove background noise, balance audio levels, and enhance sound quality to deliver a professional listening experience.
 
 ### Podcast Editing

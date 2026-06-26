@@ -43,8 +43,8 @@ const icons = {
               <div class="point-inner">
                 <Icon stroke-width={2} size={30} />
                 <div class="content">
-                  <h3>{point.title}</h3>
-                  <p>{point.description}</p>
+                  <h3 class="u-heading point-title">{point.title}</h3>
+                  <p class="u-text point-text">{point.description}</p>
                 </div>
               </div>
             </div>
@@ -59,6 +59,7 @@ const icons = {
 
 <style>
   .container {
+    margin-top: 8rem;
     margin-bottom: 8rem;
     position: relative;
   }
@@ -133,17 +134,17 @@ const icons = {
     gap: 0.5rem;
   }
 
-  .content h3 {
+  .point-title {
     margin: 0;
-    font-size: 1.25rem;
-    font-weight: 500;
-    line-height: 1.3;
+    --fs: 1.25rem;
+    --fw: 500;
+    --lh: 1.3;
   }
 
-  .content p {
+  .point-text {
     margin: 0;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    --fs: 0.95rem;
+    --lh: 1.5;
     color: var(--text-muted);
   }
 

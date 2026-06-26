@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import HeroHome from "../components/HeroHome.astro";
 import TextMarquee from "../components/TextMarquee.astro";
-import GalleryText from "../components/GalleryText.astro";
+import Services from "../components/Services.astro";
 import ImageMarquee from "../components/ImageMarquee.astro";
 import Faqs from "../components/Faqs.astro";
 import StepsTimeline from "../components/StepsTimeline.astro";
@@ -30,6 +30,106 @@ import logo8 from "../assets/logoipsum-331.svg";
       title: "Book a Consultation",
       url: "#",
     }}
+  />
+
+  <Services
+    secHeading="Services You Will Get"
+    subHeading="From production and distribution to audience growth, Podderro provides end-to-end podcast services that help creators save time, maintain quality, and reach more listeners consistently."
+    services={[
+      {
+        title: "Audio Enhancing ",
+        text: "Crystal-Clear Audio : Remove background noise, balance audio levels, and enhance sound quality to deliver a professional listening experience.",
+        cta: {
+          title: "Try It Today",
+          url: "#",
+        },
+        images: [
+          {
+            alt: "Dashboard overview",
+            src: "/image-1.jpg",
+            width: 6000,
+            height: 4000,
+          },
+          {
+            alt: "Project collaboration view",
+            src: "/image-2.jpg",
+            width: 2689,
+            height: 4032,
+          },
+          {
+            alt: "Analytics and reporting",
+            src: "/image-3.jpg",
+            width: 3734,
+            height: 5359,
+          },
+        ],
+        imagesAlignment: "left",
+      },
+      {
+        title: "Podcast Editing",
+        text: "Polished Episodes Ready to Publish : We cut mistakes, tighten conversations, add intros and outros, and prepare each episode for a smooth and engaging listen.",
+        cta: {
+          title: "Try It Today",
+          url: "#",
+        },
+        images: [
+          {
+            alt: "Dashboard overview",
+            src: "/image-1.jpg",
+            width: 6000,
+            height: 4000,
+          },
+          {
+            alt: "Project collaboration view",
+            src: "/image-2.jpg",
+            width: 2689,
+            height: 4032,
+          },
+          {
+            alt: "Analytics and reporting",
+            src: "/image-3.jpg",
+            width: 3734,
+            height: 5359,
+          },
+        ],
+        imagesAlignment: "right",
+      },
+      {
+        title: "Content Repurposing",
+        text: "Turn One Episode Into Weeks of Content: Transform podcast episodes into short-form videos, social media posts, clips, quotes, and promotional assets that extend your reach.",
+        cta: {
+          title: "Try It Today",
+          url: "#",
+        },
+        images: [
+          {
+            alt: "Dashboard overview",
+            src: "/image-1.jpg",
+            width: 6000,
+            height: 4000,
+          },
+          {
+            alt: "Project collaboration view",
+            src: "/image-2.jpg",
+            width: 2689,
+            height: 4032,
+          },
+          {
+            alt: "Analytics and reporting",
+            src: "/image-3.jpg",
+            width: 3734,
+            height: 5359,
+          },
+        ],
+        imagesAlignment: "left",
+      },
+    ]}
+    marqueeTexts={[
+      "Creative Firepower",
+      "Built for Speed",
+      "Trusted by Professionals",
+      "Simple, Transparent Pricing",
+    ]}
   />
 
   <WhyChoseUs
@@ -95,41 +195,6 @@ import logo8 from "../assets/logoipsum-331.svg";
     ]}
   />
 
-  <GalleryText
-    title="Designed for teams that value clarity and speed"
-    text="A clean interface, powerful features, and thoughtful details come together to help your team move faster—without sacrificing quality."
-    cta={{
-      title: "Try It Today",
-      url: "#",
-    }}
-    images={[
-      {
-        alt: "Dashboard overview",
-        src: "/image-1.jpg",
-        width: 6000,
-        height: 4000,
-      },
-      {
-        alt: "Project collaboration view",
-        src: "/image-2.jpg",
-        width: 2689,
-        height: 4032,
-      },
-      {
-        alt: "Analytics and reporting",
-        src: "/image-3.jpg",
-        width: 3734,
-        height: 5359,
-      },
-    ]}
-    marqueeTexts={[
-      "Creative Firepower",
-      "Built for Speed",
-      "Trusted by Professionals",
-      "Simple, Transparent Pricing",
-    ]}
-  />
-
   <Statements
     items={[
       {
@@ -147,91 +212,55 @@ import logo8 from "../assets/logoipsum-331.svg";
     ]}
   />
 
+  
   <TextMarquee
-    class="marquee"
-    texts={[
-      "Creative Firepower",
-      "Built for Speed",
-      "Trusted by Professionals",
-      "Simple, Transparent Pricing",
-    ]}
+  class="marquee"
+  texts={[
+    "Creative Firepower",
+    "Built for Speed",
+    "Trusted by Professionals",
+    "Simple, Transparent Pricing",
+  ]}
   />
-
-  <Plans
-    title="Plans & Pricing"
-    subtitle="Start for free, upgrade when you’re ready. No hidden fees, no long-term commitments."
-    items={[
-      {
-        title: "Free Plan",
-        price: {
-          amount: "$0",
-          duration: "month",
-        },
-        link: {
-          title: "Get Started Free",
-          url: "#",
-        },
-        features: [
-          { title: "Up to 50 accounts" },
-          { title: "Unlimited projects" },
-          { title: "Chat support", disabled: true },
-          { title: "Email support", disabled: true },
-          { title: "Custom onboarding", disabled: true },
-        ],
-      },
-      {
-        title: "Premium Plan",
-        price: {
-          amount: "$20",
-          duration: "month",
-        },
-        link: {
-          title: "Start 14-Day Trial",
-          url: "#",
-        },
-        features: [
-          { title: "Up to 50 accounts" },
-          { title: "Unlimited projects" },
-          { title: "Priority chat support" },
-          { title: "Email support" },
-          { title: "Custom onboarding assistance" },
-        ],
-      },
-    ]}
-  />
-
+  
   <Faqs
     title="Frequently Asked Questions"
     mobileTitle="FAQs"
     subtitle="Quick answers to the most common questions."
     items={[
       {
-        question: "Who is this platform for?",
+        question: "What podcast services do you provide?",
         answer:
-          "It’s built for creators, startups, agencies, and teams who want to move faster without sacrificing quality or control.",
+          "We offer podcast editing, audio enhancement, content repurposing, guest booking, distribution, and marketing support.",
       },
       {
-        question: "Can I upgrade or downgrade at any time?",
+        question: "Which podcast platforms do you support?",
         answer:
-          "Yes. You can change plans whenever you need, with no penalties or long-term contracts.",
+          "We help distribute podcasts to major platforms including Spotify, Apple Podcasts, YouTube, Amazon Music, and more.",
       },
       {
-        question: "Does the free plan really cost nothing?",
+        question: "How long does it take to deliver an episode?",
         answer:
-          "Absolutely. The free plan gives you full access to core features so you can evaluate the platform with confidence.",
+          "Turnaround times vary by project scope, but most episodes are delivered within a few business days.",
       },
       {
-        question: "Is my data secure?",
+        question: "Do I keep full ownership of my content?",
         answer:
-          "Yes. We use industry-standard security practices to protect your data and ensure reliability.",
+          "Yes. You retain complete ownership of your podcast, recordings, and all published content.",
       },
       {
-        question: "Do you offer support during onboarding?",
+        question: "Can you work with an existing podcast?",
         answer:
-          "Premium users receive guided onboarding and priority support to ensure a smooth start.",
+          "Absolutely. Whether you're launching a new show or improving an established one, our services can be tailored to your needs.",
       },
     ]}
   />
+
+<Plans
+    title="Get In Touch"
+    subtitle="Have a question or ready to start? Send us a message and we'll get back to you within 24 hours."
+  />
+
 
   <ImageMarquee
     images={[

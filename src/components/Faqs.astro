@@ -16,6 +16,9 @@ const { title, subtitle, mobileTitle, items } = Astro.props;
 
 <sy-faqs>
   <div class="u-container container">
+    <div data-gl-place data-gl-place-factor="1.5"></div>
+
+
     <div class="content">
       <h2 class="u-heading" data-sy-reveal="words">
         <span>{title}</span>
@@ -107,6 +110,16 @@ const { title, subtitle, mobileTitle, items } = Astro.props;
 </script>
 
 <style>
+    [data-gl-place] {
+    --d: 1;
+    --s: 18.75rem;
+    margin: 3rem auto 5rem;
+
+    @media (--mq-tablet) {
+      --s: 16rem;
+    }
+  }
+  
   sy-faqs {
     display: block;
     overflow: hidden;

@@ -1,0 +1,69 @@
+---
+import type { Link, Image } from "../types";
+import GradientBackground from "./GradientBackground.astro";
+import GalleryTitle from "./GalleryTitle.astro";
+import GalleryText from "./GalleryText.astro";
+import TextMarquee from "./TextMarquee.astro";
+
+interface Service {
+  title: string;
+  text: string;
+  cta?: Link;
+  images: Image[];
+  imagesAlignment: "left" | "right";
+}
+
+interface Props {
+  secHeading: string;
+  subHeading: string;
+  services: Service[];
+  marqueeTexts: string[];
+}
+
+const { secHeading, subHeading, services, marqueeTexts } = Astro.props;
+---
+
+<div class="sy-services">
+  <div class="u-container services-inner">
+    <GalleryTitle heading={secHeading} subHeading={subHeading} />
+    <div class="services-list">
+      {services.map((service) => (
+        <GalleryText
+          title={service.title}
+          text={service.text}
+          cta={service.cta}
+          images={service.images}
+          imagesAlignment={service.imagesAlignment}
+        />
+      ))}
+    </div>
+  </div>
+  <TextMarquee class="marquee" texts={marqueeTexts} direction={-1} />
+  <GradientBackground />
+</div>
+
+<style>
+  .sy-services {
+    margin: 4rem 0 0;
+    padding: 4rem 0 0;
+    position: relative;
+  }
+
+  .services-inner {
+    position: relative;
+    z-index: 9;
+  }
+
+  .services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .marquee {
+    z-index: 9;
+    padding: 2rem 0;
+    margin: 4rem 0 0;
+    --c: var(--color-white);
+  }
+</style>

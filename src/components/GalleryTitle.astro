@@ -1,0 +1,40 @@
+---
+interface Props {
+    heading: string;
+    subHeading: string;
+}
+
+const {heading, subHeading} = Astro.props
+---
+<div class="container">
+    <h2 class="u-heading item-title" style="margin-bottom: 1rem;">{heading}</h2>
+    <p class="u-text item-text">{subHeading}</p>
+</div>
+
+<style>
+    .container {
+        text-align: center;
+        position: relative;
+        z-index: 9;
+        padding: 2rem;
+        border-radius: 1.5rem;
+        backdrop-filter: blur(6px) saturate(1.05);
+        gap: 1rem;
+        margin-bottom: 2rem;
+
+        @media (--mq-tablet) {
+        gap: 2rem;
+        }
+
+
+        @media (--mq-phone) {
+        padding: 1rem 0;
+        }
+  }
+  .item-title {
+    --fs: 3rem;
+    --lh: 1.1;
+    max-width: 20em;
+  }
+
+</style>

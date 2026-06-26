@@ -2,43 +2,30 @@
 import type { Link, Image } from "../types";
 import Button from "./Button.astro";
 import Gallery from "./Gallery.astro";
-import GradientBackground from "./GradientBackground.astro";
-import TextMarquee from "../components/TextMarquee.astro";
 
 interface Props {
   images: Image[];
   title: string;
   text?: string;
   cta?: Link;
-  marqueeTexts: string[];
+  imagesAlignment: "left" | "right";
 }
 
-const { title, text, cta, images, marqueeTexts } = Astro.props;
+const { title, text, cta, images, imagesAlignment } = Astro.props;
 ---
 
-<div class="sy-gallery-text">
-  <div class="u-container container">
-    <div class="content">
-      <h2 class="u-heading title" data-sy-reveal="words">{title}</h2>
-      <p class="u-text text" data-sy-reveal="lines">{text}</p>
-      {cta ? <Button {...cta} arrow class="cta" /> : null}
-    </div>
-    <Gallery class="gallery" images={images} />
+<div class={"gallery-text " + imagesAlignment}>
+  <div class="content">
+    <h2 class="u-heading title" data-sy-reveal="words">{title}</h2>
+    <p class="u-text text" data-sy-reveal="lines">{text}</p>
+    {cta ? <Button {...cta} arrow class="cta" /> : null}
   </div>
-  <TextMarquee class="marquee" texts={marqueeTexts} direction={-1} />
-  <GradientBackground />
+  <Gallery class="gallery" images={images} />
 </div>
 
 <style>
-  .sy-gallery-text {
-    margin: 8rem 0 0;
-    padding: 10rem 0 0;
-    position: relative;
-  }
-
-  .container {
+  .gallery-text {
     display: flex;
-    flex-direction: row-reverse;
     justify-content: flex-end;
     align-items: center;
     gap: 3rem;
@@ -59,6 +46,14 @@ const { title, text, cta, images, marqueeTexts } = Astro.props;
     @media (--mq-phone) {
       padding: 1rem 0;
     }
+  }
+
+  .left {
+    flex-direction: row-reverse;
+  }
+
+  .right {
+    flex-direction: row;
   }
 
   .content {
@@ -96,12 +91,5 @@ const { title, text, cta, images, marqueeTexts } = Astro.props;
     @media (--mq-tablet) {
       max-width: 25rem;
     }
-  }
-
-  .marquee {
-    z-index: 9;
-    padding: 2rem 0;
-    margin: 6rem 0 0;
-    --c: var(--color-white);
   }
 </style>
